@@ -19,53 +19,53 @@
 
 </head>
 <body>
-	<header
-		class="d-flex justify-content-between p-4 border-bottom align-items-center">
+	<div class="d-flex justify-content-between p-4 border-bottom align-items-center">
 		<h1>Health Track</h1>
 		<a class="h5 text-warning text-decoration-none" href="index.jsp">Entrar</a>
-	</header>
+	</div>
 	<div class="container mt-4">
 		<div class="row justify-content-md-center">
-			<form class="col-md-4 mb-4">
+			<form class="col-md-4 mb-4" action="usuarioCadastar" method="post">
 				<div class="mb-3">
 					<label for="nome" class="form-label">Nome: </label> 
-					<input type="text" class="form-control" id="nome" placeholder="Joe Doe">
+					<input type="text" class="form-control" id="nome" name="nome" placeholder="Joe Doe">
 				</div>
 				
 				<div class="mb-3">
 					<label for="email" class="form-label">E-mail: </label> 
-					<input type="email" class="form-control" id="email" placeholder="j.doe@gmail.com">
+					<input type="email" class="form-control" id="email" name="email" placeholder="j.doe@gmail.com">
 				</div>
 				
 				<div class="mb-3">
 					<label for="altura" class="form-label">Altura: </label> 
-					<input type="number" class="form-control" id="altura" placeholder="1.75">
+					<input type="mumber" step=".01" class="form-control" id="altura" name="altura" placeholder="1.75">
 				</div>
 				
 				<div class="mb-3">
 					<label for="dtnasc" class="form-label">Nascimento: </label> 
-					<input type="date" class="form-control" id="dtnasc" placeholder="24/02/1995">
+					<input type="date" class="form-control" id="dtnasc" name="dtnasc" placeholder="24/02/1995">
 				</div>
 				
 				<div>
-					<select class="mdb-select md-form md-outline colorful-select dropdown-primary" name="especialidade">
+					<select class="mdb-select md-form md-outline colorful-select dropdown-primary" name="sexo">
 			    		<option selected>Sexo</option>
-  						<option value="1">Feminino</option>
-  						<option value="2">Masculino</option>
-  						<option value="2">Outros</option>]
+  						<option value="F">Feminino</option>
+  						<option value="M">Masculino</option>
+  						<option value="O">Outros</option>
   					</select>
 				</div>
 				<br>
 				
 				<div class="mb-3">
 					<label for="senha" class="form-label">Senha: </label> 
-					<input type="password" class="form-control" id="senha">
+					<input type="password" class="form-control" id="senha" name="senha">
 				</div>
 				
 				<div class="d-grid gap-2 mt-4">
-					<a href="dashbord.jsp" id="button" type="submit" class="btn btn-warning btn-lg">Cadastrar</a>
+					<button id="button" type="submit" class="btn btn-warning btn-lg">Cadastrar</button>
 				</div>
 			</form>
+		</div>
 		</div>
 </body>
 </html>

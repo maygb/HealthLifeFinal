@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.projeto.dao.impl.OraclePressaoDao;
 import br.com.projeto.exception.DBException;
@@ -30,10 +31,14 @@ public class PressaoCadastrarController extends HttpServlet {
 		
 		try {
 			
+			HttpSession session = request.getSession();
+			
 			String data = request.getParameter("dtAfericao");
 			String hora = request.getParameter("hora");
 			
 			String dataHora = data + " " + hora;
+			
+			System.out.println(session.getAttribute("codigo"));
 
 			OraclePressaoDao pressaoDao = new OraclePressaoDao();
 			
@@ -43,8 +48,8 @@ public class PressaoCadastrarController extends HttpServlet {
 			pressao.setSistolica(Integer.parseInt(request.getParameter("sistolica")));
 			pressao.setDiastolica(Integer.parseInt(request.getParameter("diastolica")));
 			pressao.setOcorrencia(request.getParameter("notas"));
-			pressao.setCdUsuario(1010);
-			
+			pressao.setCdUsuario((Integer) session.getAttribute("codigo"));
+			 
 			
 			RequestDispatcher rd = request.getRequestDispatcher("listaPressaoBusca.jsp"); 
 			rd.forward(request, response);	

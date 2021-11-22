@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -27,24 +28,16 @@
             <div id="card_login" class="card col-md-5 offset-md-1 col-sm-10 offset-sm-1 ">
                 <div class="card-header bg-transparent">Login</div>
                 <div class="card-body text-success">
-                    <form>
+                    <form method="POST" action="login">
                         <div class="row mb-3 ms-5">
                             <div class="d-grid gap col-10">
-                                <input id="inputEmail" type="email" class="form-control mt-3" placeholder="E-mail">
-                                <input id="inputPassword" type="password" class="form-control mt-3" placeholder="Senha" >
+                                <input id="inputEmail" type="email" class="form-control mt-3" name="email" placeholder="E-mail">
+                                <input id="inputPassword" type="password" class="form-control mt-3" name="senha" placeholder="Senha" >
                             </div>
                             <div class="d-grid gap-2 col-10 mt-5">
-                                <a id="button" href="dashbord.jsp" type="submit" class="btn btn-warning py-2">Login</a>
+                                <button id="button" type="submit" class="btn btn-warning py-2">Login</button>
                             </div>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                    <label class="form-check-label" for="gridCheck1">
-                                    Lembre-se de mim
-                                    </label>
-                                </div>
                             </div>
-                        </div>
                     </form>
                 </div>
                 <div class="card-footer bg-transparent">Novo por aqui?
